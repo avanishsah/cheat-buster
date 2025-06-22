@@ -1,9 +1,10 @@
-// script.js
-const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
-const resultsContainer = document.getElementById('results-container');
+import { searchUser } from './api.js';
 
-const API_BASE_URL = 'http://localhost:3000/api';
+const searchForm = document.getElementById('search-form');
+const emailInput = document.getElementById('search-email');
+const nameInput = document.getElementById('search-name');
+const searchButton = document.getElementById('search-button');
+const resultsContainer = document.getElementById('results-container');
 
 const displayBustedResult = (user) => {
     resultsContainer.innerHTML = `
@@ -26,19 +27,22 @@ const displayError = (message) => {
 
 searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const emailToSearch = searchInput.value;
+
+    const emailToSearch = emailInput.value.trim();
+    const nameToSearch = nameInput.value.trim();
+
+    if (!emailToSearch && !nameToSearch) {
+        displayError("Please enter either an email or a name to search.");
+        return;
+    }
 
     resultsContainer.innerHTML = '<p>Searching...</p>';
+    searchButton.disabled = true;
+    searchButton.textContent = 'Searching...';
 
     try {
-        const response = await axios.get(`${API_BASE_URL}/search`, {
-            params: {
-                email: emailToSearch
-            }
-        });
-
-        displayBustedResult(response.data);
-
+        const user = await searchUser({ email: emailToSearch, firstName: nameToSearch });
+        displayBustedResult(user);
     } catch (error) {
         if (error.response && error.response.status === 404) {
             displaySafeResult(error.response.data.message);
@@ -47,5 +51,8 @@ searchForm.addEventListener('submit', async (event) => {
         } else {
             displayError('Could not connect to the server. Please try again later.');
         }
+    } finally {
+        searchButton.disabled = false;
+        searchButton.textContent = 'Search';
     }
 });

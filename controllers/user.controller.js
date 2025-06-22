@@ -2,9 +2,12 @@
 const User = require('../models/user.model');
 const { z } = require('zod');
 
-// Define a schema for the query parameters we expect
+// Updated schema to allow either email or firstName
 const searchQuerySchema = z.object({
-    email: z.string().email({ message: "Invalid email address" }),
+    email: z.string().email().optional(),
+    firstName: z.string().min(1, "First name cannot be empty").optional(),
+}).refine((data) => data.email || data.firstName, {
+    message: "Either email or firstName must be provided"
 });
 
 exports.searchUser = async (req, res) => {
@@ -16,10 +19,15 @@ exports.searchUser = async (req, res) => {
             return res.status(400).json({ error: validationResult.error.issues[0].message });
         }
 
-        const { email } = validationResult.data;
+        const { email, firstName } = validationResult.data;
 
-        // 2. Search for the user in the database
-        const foundUser = await User.findOne({ email: email });
+        // 2. Search with $or query
+        const foundUser = await User.findOne({
+            $or: [
+                ...(email ? [{ email }] : []),
+                ...(firstName ? [{ firstName }] : [])
+            ]
+        });
 
         // 3. Respond
         if (!foundUser) {
