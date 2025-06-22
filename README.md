@@ -35,3 +35,15 @@ Email not in the database
 Invalid Email to test zod
 ![image](https://github.com/user-attachments/assets/2fa92a63-1111-417b-8c27-b2ce4fe60b16)
 
+#Medium Enhancements
+Search by name is addded
+![image](https://github.com/user-attachments/assets/b0ef9dd1-86a5-4641-a237-ebd7772c930e)
+
+Loading state 
+![image](https://github.com/user-attachments/assets/117f8ee1-799f-46c6-829e-de97a37dbdd9)
+
+Refactor with API Service
+![image](https://github.com/user-attachments/assets/ea2e7743-d499-4746-81d0-449affbc6b14)
+
+Working with first name also
+![image](https://github.com/user-attachments/assets/c0a66a19-7f3c-4a57-bd04-d9952f7193d6)
