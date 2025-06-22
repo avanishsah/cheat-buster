@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -10,15 +9,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS with specific options
 app.use(cors({
   origin: [
-    'http://127.0.0.1:3001',  // Your Live Server address
-    'http://localhost:3001',   // Alternative localhost address
-    'http://localhost:3000'    // Your backend address (for testing)
+    'http://127.0.0.1:3001',  
+    'http://localhost:3001',   
+    'http://localhost:3000'    
   ],
-  methods: ['GET', 'POST'],    // Allowed HTTP methods
-  credentials: true            // Allow cookies if needed
+  methods: ['GET', 'POST'], 
+  credentials: true          
 }));
 
 app.use(express.json());
@@ -31,7 +29,6 @@ app.get('/', (req, res) => {
     res.send('Cheat Buster API is running!');
 });
 
-// Use our user routes for any path starting with /api
 app.use('/api', userRoutes);
 
 app.listen(PORT, () => {

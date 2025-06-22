@@ -1,8 +1,6 @@
-// controllers/user.controller.js
 const User = require('../models/user.model');
 const { z } = require('zod');
 
-// Updated schema to allow either email or firstName
 const searchQuerySchema = z.object({
     email: z.string().email().optional(),
     firstName: z.string().min(1, "First name cannot be empty").optional(),
@@ -12,7 +10,6 @@ const searchQuerySchema = z.object({
 
 exports.searchUser = async (req, res) => {
     try {
-        // 1. Validate the incoming query
         const validationResult = searchQuerySchema.safeParse(req.query);
 
         if (!validationResult.success) {
@@ -21,7 +18,6 @@ exports.searchUser = async (req, res) => {
 
         const { email, firstName } = validationResult.data;
 
-        // 2. Search with $or query
         const foundUser = await User.findOne({
             $or: [
                 ...(email ? [{ email }] : []),
@@ -29,7 +25,6 @@ exports.searchUser = async (req, res) => {
             ]
         });
 
-        // 3. Respond
         if (!foundUser) {
             return res.status(404).json({ message: "Phew! Your partner is not on the list." });
         }

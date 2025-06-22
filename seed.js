@@ -1,4 +1,3 @@
-// seed.js
 const mongoose = require('mongoose');
 const axios = require('axios');
 const User = require('./models/user.model');
@@ -9,7 +8,6 @@ const seedDatabase = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log('Database connected for seeding.');
 
-        // Check if data already exists to avoid re-seeding
         const userCount = await User.countDocuments();
         if (userCount > 0) {
             console.log('Database already seeded. Exiting.');
@@ -17,7 +15,6 @@ const seedDatabase = async () => {
             return;
         }
 
-        // Fetch 50 fake users from the randomuser.me API
         const response = await axios.get('https://randomuser.me/api/?results=50&nat=us');
         const usersToSeed = response.data.results.map(user => ({
             firstName: user.name.first,
