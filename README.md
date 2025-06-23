@@ -1,39 +1,40 @@
 #PART 1 The backend
 Step 1 : Project Setup, Dependencies & necessary packages for our backend 
-![image](https://github.com/user-attachments/assets/074e89ec-e325-4f94-845f-56fdeffb2e3e)
+![Screenshot 2025-06-22 153415](https://github.com/user-attachments/assets/1c4e48b2-c609-4fe2-b064-cc6a21ed1f47)
 
 File Structure
-![image](https://github.com/user-attachments/assets/4b61b25b-2667-4d95-876b-56c8cb794fe6)
-
-Step 2 : setiing .env
-![image](https://github.com/user-attachments/assets/7ffa6885-1c6b-451c-bc30-a613b8774d44)
+![Screenshot 2025-06-22 185837](https://github.com/user-attachments/assets/9913c16d-031d-42f8-b540-6856eaeb9307)
 
 Data seeded successfully
-![image](https://github.com/user-attachments/assets/34674383-8b9b-4bf6-b77c-17dbc64d6e9f)
-![image](https://github.com/user-attachments/assets/2d9656c7-b9a3-4cec-b748-ebd85a4725d9)
+![Screenshot 2025-06-22 164957](https://github.com/user-attachments/assets/8ca2e045-bb56-48fe-9c71-701984bd3e02)
 
-npm start make backend live 
-![image](https://github.com/user-attachments/assets/b3811460-1a52-4b41-ba83-d3ab5c4064c6)
+Data in MongoDB Atlas
+![Screenshot 2025-06-22 165430](https://github.com/user-attachments/assets/b96d22af-c55f-4900-b444-62424f3795ac)
+
 
 
 PART 2 Frontend
 Backend Server is running
-![image](https://github.com/user-attachments/assets/53484ae3-def2-42e7-a145-8fbb350cf7dc)
+![Screenshot 2025-06-22 212709](https://github.com/user-attachments/assets/6849036b-2e00-4ca6-95f4-556395b890d0)
 
 Index.html is working
-![image](https://github.com/user-attachments/assets/3ba767ff-86ae-4da1-a6dc-9e49b638e06d)
+![Screenshot 2025-06-22 213000](https://github.com/user-attachments/assets/53e2c7ea-2e5e-4a88-abaf-076d6c76019c)
+
 
 Checking an email from MongoDB database
-![image](https://github.com/user-attachments/assets/ad4bbb58-ce8e-4a4f-aeff-813a96803f69)
+![Screenshot 2025-06-22 213743](https://github.com/user-attachments/assets/7f588a06-80bc-4818-a5ee-c7a894631e12)
+
 
 MongoDb Collection Screenshot of User
-![image](https://github.com/user-attachments/assets/ea59aef9-ed9e-4a4a-999e-0dd3dfa5a3aa)
+![Screenshot 2025-06-22 213253](https://github.com/user-attachments/assets/f04468f4-b147-40f6-963b-f9623fccd358)
 
 Email not in the database
-![image](https://github.com/user-attachments/assets/2e49ffb4-b057-4334-b33b-de6c6afdb595)
+![Screenshot 2025-06-22 213845](https://github.com/user-attachments/assets/a5d51517-3789-4ace-82f8-e1cbbd639e74)
+
 
 Invalid Email to test zod
-![image](https://github.com/user-attachments/assets/2fa92a63-1111-417b-8c27-b2ce4fe60b16)
+![Screenshot 2025-06-22 213955](https://github.com/user-attachments/assets/9e887e96-15c4-441e-853b-f81f1c999989)
+
 
 #Medium Enhancements
 Search by name is addded
@@ -47,3 +48,8 @@ Refactor with API Service
 
 Working with first name also
 ![image](https://github.com/user-attachments/assets/c0a66a19-7f3c-4a57-bd04-d9952f7193d6)
+
+Swagger Implementation
+![image](https://github.com/user-attachments/assets/9107cba6-c534-44a4-a8c6-b300e6d0e1a8)
+
+
