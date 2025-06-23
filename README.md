@@ -48,3 +48,7 @@ Refactor with API Service
 
 Working with first name also
 ![image](https://github.com/user-attachments/assets/c0a66a19-7f3c-4a57-bd04-d9952f7193d6)
+
+Swagger Implementation
+![image](https://github.com/user-attachments/assets/9107cba6-c534-44a4-a8c6-b300e6d0e1a8)
+
